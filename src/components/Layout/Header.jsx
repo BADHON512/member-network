@@ -1,13 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [BB, setBB] = useState(0);
   const [Toggle, setToggle] = useState(false);
   return (
     <div className="h-[8vh] w-full text-white  ">
-      <div className="h-[8vh] w-full bg-[#101020] fixed top-0">
+      <div className="h-[8vh] w-full bg-[#101020] fixed top-0 z-10">
         <div className="flex h-full w-full items-center justify-between px-3">
           {/* header 1s items */}
           <div className="w-[40%] ">
@@ -16,7 +17,8 @@ export default function Header() {
 
           <div className=" hidden 800px:block w-[60%] 1200px:w-[40%] ">
             <nav className="flex justify-between ">
-              <div className="relative ">
+               <Link to={"/"} >
+               <div className="relative ">
                 <h1
                   onClick={() => setBB(0)}
                   className={
@@ -31,6 +33,8 @@ export default function Header() {
                   } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
                 ></div>
               </div>
+               </Link>
+              <Link to={'about'}>
               <div className="relative ">
                 <h1
                   onClick={() => setBB(1)}
@@ -46,6 +50,7 @@ export default function Header() {
                   } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
                 ></div>
               </div>
+              </Link>
               <div className="relative ">
                 <h1
                   onClick={() => setBB(2)}
