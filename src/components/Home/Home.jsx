@@ -13,7 +13,7 @@ import Footer from "../Footer";
 export default function Home() {
   return (
     <>
-    <Header/>
+
       <div>
         <div className="h-[5vh] w-full bg-red-200 flex items-center animation-container ">
           <h1 className="animated-div text-[20px] font-semibold">
@@ -100,7 +100,7 @@ export default function Home() {
 {/* contact */}
 <Contact/>
       </div>
-      <Footer/>
+
     </>
   );
 }

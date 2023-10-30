@@ -17,73 +17,99 @@ export default function Header() {
 
           <div className=" hidden 800px:block w-[60%] 1200px:w-[40%] ">
             <nav className="flex justify-between ">
-               <Link to={"/"} >
-               <div className="relative ">
-                <h1
-                  onClick={() => setBB(0)}
-                  className={
-                    "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
-                  }
-                >
-                  Home
-                </h1>
-                <div
-                  className={`${
-                    BB === 0 ? "block" : "hidden"
-                  } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
-                ></div>
-              </div>
-               </Link>
-              <Link to={'about'}>
-              <div className="relative ">
-                <h1
-                  onClick={() => setBB(1)}
-                  className={
-                    "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
-                  }
-                >
-                  About
-                </h1>
-                <div
-                  className={`${
-                    BB === 1 ? "block" : "hidden"
-                  } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
-                ></div>
-              </div>
+              <Link to={"/"}>
+                <div className="relative ">
+                  <h1
+                    onClick={() => setBB(0)}
+                    className={
+                      "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
+                    }
+                  >
+                    Home
+                  </h1>
+                  <div
+                    className={`${
+                      BB === 0 ? "block" : "hidden"
+                    } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
+                  ></div>
+                </div>
               </Link>
-              <div className="relative ">
-                <h1
-                  onClick={() => setBB(2)}
-                  className={
-                    "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
-                  }
-                >
-                  Pricing
+              <Link to={"/about"}>
+                <div className="relative ">
+                  <h1
+                    onClick={() => setBB(1)}
+                    className={
+                      "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
+                    }
+                  >
+                    About
+                  </h1>
+                  <div
+                    className={`${
+                      BB === 1 ? "block" : "hidden"
+                    } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
+                  ></div>
+                </div>
+              </Link>
+              <Link to="/pricing">
+                <div className="relative ">
+                  <h1
+                    onClick={() => setBB(2)}
+                    className={
+                      "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
+                    }
+                  >
+                    Pricing
+                  </h1>
+                  <div
+                    className={`${
+                      BB === 2 ? "block" : "hidden"
+                    } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
+                  ></div>
+                </div>
+              </Link>
+              <Link to="/collect-bill">
+                <div className="relative ">
+                  <h1
+                    onClick={() => setBB(3)}
+                    className={
+                      "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
+                    }
+                  >
+                    Collect bill
+                  </h1>
+                  <div
+                    className={`${
+                      BB === 3 ? "block" : "hidden"
+                    } h-1 w-28 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
+                  ></div>
+                </div>
+              </Link>
+
+
+              <Link to="/login">
+                <div className="relative ">
+                  <h1
+                    onClick={() => setBB(3)}
+                    className={
+                      "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
+                    }
+                  >
+                    Login
+                  </h1>
+            
+                </div>
+              </Link>
+
+              {/* <Link to={"/me"}>
+                <h1 className="text-[20px] rounded-sm font-semibold px-2 py-1  cursor-pointer transition duration-300 ease-in-out">
+                  <img
+                    src="/badhon.jpg"
+                    className="h-[45px] w-[45px] rounded-full object-cover"
+                    alt=""
+                  />
                 </h1>
-                <div
-                  className={`${
-                    BB === 2 ? "block" : "hidden"
-                  } h-1 w-20 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
-                ></div>
-              </div>
-              <div className="relative ">
-                <h1
-                  onClick={() => setBB(3)}
-                  className={
-                    "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
-                  }
-                >
-                  Collect bill
-                </h1>
-                <div
-                  className={`${
-                    BB === 3 ? "block" : "hidden"
-                  } h-1 w-32 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
-                ></div>
-              </div>
-              <h1 className="text-[20px] rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out">
-                Collect bill
-              </h1>
+              </Link> */}
             </nav>
           </div>
 
@@ -114,7 +140,6 @@ export default function Header() {
                     >
                       Home
                     </h1>
-                 
                   </div>
                   <div className="relative ">
                     <h1
@@ -125,7 +150,6 @@ export default function Header() {
                     >
                       About
                     </h1>
-                
                   </div>
                   <div className="relative ">
                     <h1
@@ -136,7 +160,6 @@ export default function Header() {
                     >
                       Pricing
                     </h1>
-         
                   </div>
                   <div className="relative ">
                     <h1
@@ -147,10 +170,9 @@ export default function Header() {
                     >
                       Collect bill
                     </h1>
-                 
                   </div>
                   <h1 className="text-[20px] rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out">
-                   Account
+                    Account
                   </h1>
                 </nav>
               </motion.div>
