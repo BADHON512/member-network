@@ -24,18 +24,18 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const config={headers:{"Content-type":"multipart/form-data"}}
-    const newForm=new FormData()
-     newForm.append("file",avatar)
-     newForm.append("name",name)
-     newForm.append("email",email)
-     newForm.append("password",password)
+    // const config={headers:{"Content-type":"multipart/form-data"}}
+    // const newForm=new FormData()
+    //  newForm.append("file",avatar)
+    //  newForm.append("name",name)
+    //  newForm.append("email",email)
+    //  newForm.append("password",password)
     
-     axios.post(`${server}/user/create-user`,newForm,config).then((res)=>{
-      if(res.data.success===true){
-       toast.success(res.data.message)
-      }
-     }).catch((err)=>{
+     await axios.post(`http://localhost:5000/api/v2/user-post`,{name,email,password}).then((res)=>{
+
+       toast.success(res.data.message)}
+   
+     ).catch((err)=>{
       console.log(err)
      })
   }

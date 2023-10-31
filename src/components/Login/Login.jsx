@@ -14,7 +14,13 @@ const Login = () => {
   const [visible, setVisible] = useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault()
+ 
+    await axios.post(`http://localhost:5000/api/v2/user-login`,{email,password},{withCredentials:true}).then((res)=>{
 
+    toast.success(res.data.message)}
+
+  ).catch((err)=>{
+   toast.error(err.response.data.message)})
   
   }
  
