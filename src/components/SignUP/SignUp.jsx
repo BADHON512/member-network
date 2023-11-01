@@ -15,28 +15,35 @@ const SignUp = () => {
   const [password, setPassword] = useState("")
   const [visible, setVisible] = useState(false)
   const [name, setName] = useState("")
-  const [avatar,setAvatar]=useState(null)
-
+  const [avatar,setAvatar]=useState([])
+  console.log(avatar)
   const handleFileInputChange=(e)=>{
     const file=e.target.files[0]
-    setAvatar(file)
+    IMG(file)
+ 
+  }
+
+  const IMG=(file)=>{
+ const reader=new FileReader()
+ reader.readAsDataURL(file)
+ reader.onloadend=()=>{
+  setAvatar(reader.result)
+ }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // const config={headers:{"Content-type":"multipart/form-data"}}
-    // const newForm=new FormData()
-    //  newForm.append("file",avatar)
-    //  newForm.append("name",name)
-    //  newForm.append("email",email)
-    //  newForm.append("password",password)
+ 
     
-     await axios.post(`http://localhost:5000/api/v2/user-post`,{name,email,password}).then((res)=>{
+     await axios.post(`http://localhost:5000/api/v2/user-post`,{name,email,password,avatar}).then((res)=>{
 
-       toast.success(res.data.message)}
+     console.log(res)
+       toast.success(res.data.message)
+      
+      }
    
      ).catch((err)=>{
-      console.log(err)
+   toast.error(err.response.data.message)
      })
   }
 
@@ -102,7 +109,7 @@ const SignUp = () => {
               <div className="mt-2 flex items-center">
                 <span className='inline-block h-8 w-8 rounded-full overflow-hidden'>
                     {
-                        avatar?(<img src={URL.createObjectURL(avatar)}alt="img"className='h-full w-full object-cover rounded-full'/>):(<RxAvatar className="h-8 w-8"/>)
+                        avatar?(<img src={avatar}alt="img"className='h-full w-full object-cover rounded-full'/>):(<RxAvatar className="h-8 w-8"/>)
                     }
                 </span>
                 <label htmlFor="file-input" className='ml-5 flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50'>

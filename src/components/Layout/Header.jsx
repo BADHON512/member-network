@@ -1,9 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const { user,isAuthenticate } = useSelector((state) => state.user);
+  console.log(isAuthenticate)
   const [BB, setBB] = useState(0);
   const [Toggle, setToggle] = useState(false);
   return (
@@ -85,31 +88,32 @@ export default function Header() {
                   ></div>
                 </div>
               </Link>
-
-
-              <Link to="/login">
-                <div className="relative ">
-                  <h1
-                    onClick={() => setBB(3)}
-                    className={
-                      "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
-                    }
-                  >
-                    Login
-                  </h1>
-            
-                </div>
-              </Link>
-
-              {/* <Link to={"/me"}>
-                <h1 className="text-[20px] rounded-sm font-semibold px-2 py-1  cursor-pointer transition duration-300 ease-in-out">
-                  <img
-                    src="/badhon.jpg"
-                    className="h-[45px] w-[45px] rounded-full object-cover"
-                    alt=""
-                  />
-                </h1>
-              </Link> */}
+              <div className="">
+                {isAuthenticate ? (
+                  <Link to={"/me"}>
+                    <div className=" ">
+                      <img
+                        src="/badhon.jpg"
+                        className="h-[45px] w-[45px] rounded-full object-cover "
+                        alt=""
+                      />
+                    </div>
+                  </Link>
+                ) : (
+                  <Link to="/login">
+                  
+                      <h1
+                        onClick={() => setBB(3)}
+                        className={
+                          "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
+                        }
+                      >
+                        Login
+                      </h1>
+                
+                  </Link>
+                )}
+              </div>
             </nav>
           </div>
 

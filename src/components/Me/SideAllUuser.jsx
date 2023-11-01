@@ -1,14 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import {DataGrid }from "@mui/x-data-grid";
+import axios from 'axios';
 
 
 
 export default function SideAllUser() {
+const [user,setUser]=useState()
+console.log(user)
+useEffect(()=>{
+    async function name() {
+       const {data}= await axios.get('http://localhost:5000/api/v2/get-all-users',{withCredentials:true})
+      setUser(data.users)
+    }
+    name()
+    
+},[])
 
     const orders = [
         {
-            _id: "badhon",
+            name: "badhon",
             orderItems: [
                 { name: "Samphony p6 Pro max" }
             ],
@@ -65,19 +76,13 @@ export default function SideAllUser() {
             },
         },
     ];
-    const row = [{
-        id:"raja",
-        status:"Unpaid",
-        total:"200",
-        Month:"january"
-
-    }]
-    orders && orders.forEach((item) => {
+    const row = []
+    user && user.forEach((item) => {
         row.push({
-            id: item._id,
-            itemsQty: orders.length,
+            id: item.name,
+            status: item.role,
             total: "US$" + item.totalPrice,
-            status: item.orderStatus
+         
         })
     })
   return (
