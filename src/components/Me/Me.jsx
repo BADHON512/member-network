@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "../../redux/Action/user";
 import Account from "./Account";
+import AllWifi from "./AllWifi";
+
 
 // Sidebar component
 
@@ -54,14 +56,7 @@ function Sidebar({ Border, setBorder }) {
         All wifi user
       </h1>
 
-      <h1
-        onClick={() => setBorder(6)}
-        className={`${
-          Border === 6 ? "bg-[#d6ceceaf] " : ""
-        } text-[20px] font-semibold hover:bg-[#d6ceceaf] hover:duration-300 cursor-pointer p-2 rounded-md mt-3 `}
-      >
-        Role changer
-      </h1>
+
 
       <h1
         onClick={() => {
@@ -87,9 +82,10 @@ function MainContent({ Border,setBorder,LogOut }) {
       {Border === 2 && <SideAllUuser />}
 
       {Border === 3 && <AllBill />}
+      {Border === 4 && <AllWifi />}
 
       {Border === 7 && <div className="h-[80vh] w-full flex justify-center items-center">
-        <div className="h-[30vh] w-[30vw] bg-black rounded-md p-5">
+        <div className="w-full h-[20vh] 800px:h-[30vh] 800px:w-[30vw] bg-black rounded-md p-2 800px:p-5">
           <h1 className="font-semibold text-[20px] text-white text-center">Are you sure you want to logout ?</h1>
           <div className="h-[80%] w-full flex justify-center items-end">
 
@@ -102,11 +98,7 @@ function MainContent({ Border,setBorder,LogOut }) {
         </div>}
 
       
-      {Border === 6 && <div className="h-[80vh] w-full p-5 flex justify-center items-center">
-        
-        {
-          user?.role==="admin"?(<>your are admin</>):(<div>you are not ceo</div>)
-        }</div>}
+
     </div>
   );
 }

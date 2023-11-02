@@ -24,7 +24,9 @@ export default function CollectBill() {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  const [type, setType] = useState("Dish-bill");
   const [description, setDescription] = useState("");
+  console.log(type)
 
   const BillSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +37,7 @@ export default function CollectBill() {
         description,
         month,
         user,
+        type
       })
       .then((res) => {
         toast.success(res.data.message);
@@ -94,6 +97,27 @@ export default function CollectBill() {
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
             placeholder="এই মাসের ভাড়া লিখুন"
           />
+        </div>
+
+        <div className="mb-4">
+          <label
+            className="block text-gray-600  font-semibold mb-2"
+            htmlFor="price"
+          >
+         কি ইউজার ?
+          </label>
+          <select
+             value={type}
+            onChange={(e) => setType(e.target.value)}
+            
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+          
+          >
+            <option className="mt-2" value="Dish-bill">ডিস লাইন</option>
+          <option className="mt-2" value="Net-bill">ওয়াইফাই</option>
+        
+         
+          </select>
         </div>
 
         <div className="mb-4">

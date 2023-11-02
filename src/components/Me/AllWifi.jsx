@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import {DataGrid }from "@mui/x-data-grid";
 import axios from 'axios';
-export default function AllBill() {
+export default function AllWifi() {
     const date = new Date();
     const monthNames = [
       "January", "February", "March", "April", "May", "June",
@@ -73,10 +73,10 @@ export default function AllBill() {
         setSelectedMonth(event.target.value);
       };
 
-    const filteredUsers = Users?.filter((user) => user.month === selectedMonth);
-
+ 
+      
+    const filteredUsers = Users?.filter((user) => user.month === selectedMonth&&user.type==="wifi");
     const Total = filteredUsers?.reduce((accumulator, currentUser) => accumulator + parseFloat(currentUser.price), 0);
-    console.log(Total);
 
     const row = []
     filteredUsers && filteredUsers?.forEach((item) => {
@@ -92,7 +92,7 @@ export default function AllBill() {
     })
   return (
    <>
-      <div className='h-[8vh] w-full p-3 flex gap-x-20 items-center'>
+      <div className='h-[8vh] w-full p-3 flex gap-x-3 items-center'>
       <select className='text-[17px] outline-none font-semibold' value={selectedMonth} onChange={handleMonthChange}>
           <option value="January">January</option>
           <option value="February">February</option>
@@ -108,7 +108,7 @@ export default function AllBill() {
           <option value="December">December</option>
         </select>
 
-       <h1 className='text-[20px] font-semibold'>Total user: {" "}{filteredUsers?.length}</h1>
+        <h1 className='text-[20px] font-semibold'>Total user: {" "}{filteredUsers?.length}</h1>
 
         <h1 className='text-[20px] font-semibold'>Total Amount: {" "}{Total}</h1>
 
