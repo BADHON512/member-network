@@ -100,7 +100,7 @@ export default function Home() {
 {/* contact */}
 <Contact/>
       </div>
-
+<Footer/>
     </>
   );
 }

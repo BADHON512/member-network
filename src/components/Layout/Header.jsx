@@ -1,12 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const { user,isAuthenticate } = useSelector((state) => state.user);
-  console.log(isAuthenticate)
+    const { user,isAuthenticate } = useSelector((state) => state.user);
+   console.log(user)
+
+
   const [BB, setBB] = useState(0);
   const [Toggle, setToggle] = useState(false);
   return (
@@ -71,29 +73,31 @@ export default function Header() {
                   ></div>
                 </div>
               </Link>
-              <Link to="/collect-bill">
-                <div className="relative ">
-                  <h1
-                    onClick={() => setBB(3)}
-                    className={
-                      "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
-                    }
-                  >
-                    Collect bill
-                  </h1>
-                  <div
-                    className={`${
-                      BB === 3 ? "block" : "hidden"
-                    } h-1 w-28 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
-                  ></div>
-                </div>
-              </Link>
+           {
+            user?.role==="admin"?(   <Link to="/collect-bill">
+            <div className="relative ">
+              <h1
+                onClick={() => setBB(3)}
+                className={
+                  "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
+                }
+              >
+                Collect bill
+              </h1>
+              <div
+                className={`${
+                  BB === 3 ? "block" : "hidden"
+                } h-1 w-28 absolute -bottom-3 rounded-md bg-[red] transition duration-300 ease-in-out`}
+              ></div>
+            </div>
+          </Link>):null
+           }
               <div className="">
                 {isAuthenticate ? (
                   <Link to={"/me"}>
                     <div className=" ">
                       <img
-                        src="/badhon.jpg"
+                        src={user?.image?.url}
                         className="h-[45px] w-[45px] rounded-full object-cover "
                         alt=""
                       />
@@ -103,7 +107,7 @@ export default function Header() {
                   <Link to="/login">
                   
                       <h1
-                        onClick={() => setBB(3)}
+                        onClick={() => setBB(4)}
                         className={
                           "text-[20px] ml-1 rounded-sm font-semibold px-2 py-1 hover:bg-[#aaa7a771] cursor-pointer transition duration-300 ease-in-out"
                         }

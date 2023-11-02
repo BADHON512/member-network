@@ -17,16 +17,6 @@ useEffect(()=>{
     
 },[])
 
-    const orders = [
-        {
-            name: "badhon",
-            orderItems: [
-                { name: "Samphony p6 Pro max" }
-            ],
-            totalPrice: 120,
-            orderStatus: "Unpaid"
-        },
-    ]
 
 
     const columns = [
