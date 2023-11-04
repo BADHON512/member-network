@@ -17,7 +17,7 @@ export default function AllWifi() {
 
 
         async function name(){
-         const {data}=await axios.get('http://localhost:5000/api/v2/get-dis-users')
+         const {data}=await axios.get('https://member-network-server.vercel.app/api/v2/get-dis-users')
          setUsers(data.users)
         }
         name();
@@ -75,7 +75,7 @@ export default function AllWifi() {
 
  
       
-    const filteredUsers = Users?.filter((user) => user.month === selectedMonth&&user.type==="wifi");
+    const filteredUsers = Users?.filter((user) => user.month === selectedMonth&&user.type==="Net-bill");
     const Total = filteredUsers?.reduce((accumulator, currentUser) => accumulator + parseFloat(currentUser.price), 0);
 
     const row = []
@@ -108,9 +108,13 @@ export default function AllWifi() {
           <option value="December">December</option>
         </select>
 
-        <h1 className='text-[20px] font-semibold'>Total user: {" "}{filteredUsers?.length}</h1>
+        <h1 className="hidden 600px:block text-[20px] font-semibold">
+          Total user: {filteredUsers?.length}
+        </h1>
 
-        <h1 className='text-[20px] font-semibold'>Total Amount: {" "}{Total}</h1>
+        <h1 className="hidden 600px:block  text-[20px] font-semibold">
+          Total Amount: {Total}
+        </h1>
 
       </div>
    <div className=" pt-1">
@@ -124,6 +128,16 @@ export default function AllWifi() {
 
            
         </div>
+
+        <div>
+        <h1 className=" 600px:hidden text-[20px] font-semibold">
+          Total user: {filteredUsers?.length}
+        </h1>
+
+        <h1 className=" 600px:hidden  text-[20px] font-semibold">
+          Total Amount: {Total}
+        </h1>
+      </div>
    </>
   )
 }

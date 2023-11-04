@@ -26,12 +26,12 @@ export default function CollectBill() {
   const [price, setPrice] = useState("");
   const [type, setType] = useState("Dish-bill");
   const [description, setDescription] = useState("");
-  console.log(type)
+
 
   const BillSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await axios
-      .post("http://localhost:5000/api/v2/bill-post", {
+   await axios
+      .post("https://member-network-server.vercel.app/api/v2/bill-post", {
         name,
         price,
         description,
@@ -49,10 +49,10 @@ export default function CollectBill() {
         toast.error(err.response.data.message);
       
       });
-    console.log(name, price, description, month, user);
+  
   };
 
-  console.log(month); // This will log the current month as a string
+
 
   return (
     <div className="container mx-auto p-6">

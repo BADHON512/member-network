@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 
 export default function Services() {
   return (
@@ -32,7 +31,7 @@ export default function Services() {
             transition={{ delay: 1.5 }}
           >
             <Cart
-              img={"/public/services/electric.webp"}
+              img={"/services/electric.webp"}
               text={
                 "আমরা ডিস লাইনের এমপ্লিফায়ার এর বৈদ্যুতিক সংযোগ কারেন্টের খুঁটি থেকে দিয়ে থাকি"
               }
@@ -44,7 +43,7 @@ export default function Services() {
             transition={{ delay: 2 }}
           >
             <Cart
-              img={"/public/services/tv.jpg"}
+              img={"/services/tv.jpg"}
               text={
                 "হাই ভোল্টেজ এর কারণে অথবা কোন টেকনিক্যাল ইস্যুর কারণে এলইডি টিভি যদি নষ্ট হয়ে থাকে তবে এখানে রিপেয়ার করে "
               }
@@ -56,7 +55,7 @@ export default function Services() {
             transition={{ delay: 2.5 }}
           >
             <Cart
-              img={"/public/services/download.jpg"}
+              img={"/services/download.jpg"}
               text={
                 "ডিস লাইনের ফাইবার কেবল যদি ছিড়ে যায় তাহলে আমাদের উন্নত মেশিন দ্বারা তা পুনরায় রিপেয়ার করা হয়"
               }

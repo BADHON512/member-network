@@ -45,53 +45,121 @@ export default function Home() {
                 }}
                 className="h-[80vh] w-full "
               >
-                <div className=" h-full 800px:w-[70%] flex justify-between px-8 gap-x-5 items-center">
-                  <div>
-                    <h1 className="text-[25px] font-semibold">
+                <div className=" h-full 800px:w-[70%] flex flex-col  800px:justify-between 800px:flex-row px-8 gap-x-5 items-center">
+                  <div className="mt-[20vh] 800px:mt-0 mb-5 800px:mb-0">
+                    <h1 className="text-[25px] font-semibold bg-black text-white p-2 rounded-md">
                     প্রিয় গ্রাহক আমরা ২০২৪ সাল উপলক্ষে বিশেষ ডিসকাউন্ট মাধ্যমে নতুন ইউজার গ্রহণ করতেছি আপনারা আগ্রহ থাকলে আবেদন করুন
                     </h1>
                   </div>
 
                   <div>
-                    <button className="bg-[green] w-[20vw] 800px:w-[15vw] text-white p-2 rounded-sm hover:scale-125  hover:transition hover: duration-300 text-[20px]">
+                    <button className="bg-[green] w-[40vw] 800px:w-[15vw] text-white p-2 rounded-sm hover:scale-125  hover:transition hover: duration-300 text-[20px]">
                       আবেদন করুন
                     </button>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
-            {/* <SwiperSlide>
-              <div className="h-[90vh] w-full bg-black">
-                <img
-                  src="/images/slide/slide (6).jpg"
-                  alt=""
-                  className="bg-cover bg-center bg-no-repeat h-full w-full"
-                />
+
+            <SwiperSlide>
+              <div
+                style={{
+                  backgroundImage: 'url("/images/slide/slide (2).jpg")',
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+                className="h-[80vh] w-full "
+              >
+                <div className=" h-full 800px:w-[70%] flex flex-col  800px:justify-between 800px:flex-row px-8 gap-x-5 items-center">
+                  <div className="mt-[20vh] 800px:mt-0 mb-5 800px:mb-0">
+                    <h1 className="text-[25px] font-semibold bg-black text-white p-2 rounded-md">
+                    প্রিয় গ্রাহক আমরা ২০২৪ সাল উপলক্ষে বিশেষ ডিসকাউন্ট মাধ্যমে নতুন ইউজার গ্রহণ করতেছি আপনারা আগ্রহ থাকলে আবেদন করুন
+                    </h1>
+                  </div>
+
+                  <div>
+                    <button className="bg-[green] w-[40vw] 800px:w-[15vw] text-white p-2 rounded-sm hover:scale-125  hover:transition hover: duration-300 text-[20px]">
+                      আবেদন করুন
+                    </button>
+                  </div>
+                </div>
               </div>
-            </SwiperSlide>{" "}
-       
-              <SwiperSlide>
-          <div className='h-[90vh] w-full bg-black'>
-             <img src="/images/slide/slide (3).jpg" alt="" 
-             className="bg-cover bg-center bg-no-repeat  h-full w-full"
-             />
-          </div>
-        </SwiperSlide>  
-          <SwiperSlide>
-          <div className='h-[90vh] w-full bg-black'>
-             <img src="/images/slide/slide (2).jpg" alt="" 
-             className="bg-cover bg-center bg-no-repeat  h-full w-full"
-             />
-          </div>
-        </SwiperSlide>
-  
-        <SwiperSlide>
-          <div className='h-[90vh] w-full bg-black'>
-             <img src="/images/slide/slide (5).jpg" alt="" 
-             className="bg-cover bg-center bg-no-repeat  h-full w-full"
-             />
-          </div>
-        </SwiperSlide> */}
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                style={{
+                  backgroundImage: 'url("/images/slide/slide (3).jpg")',
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+                className="h-[80vh] w-full "
+              >
+                <div className=" h-full 800px:w-[70%] flex flex-col  800px:justify-between 800px:flex-row px-8 gap-x-5 items-center">
+                  <div className="mt-[20vh] 800px:mt-0 mb-5 800px:mb-0">
+                    <h1 className="text-[25px] font-semibold bg-black text-white p-2 rounded-md">
+                    আমরা উন্নত অপ্রতিকাল ফাইবারের মাধ্যমে কেবল সংযোগ দিয়ে থাকি এবং আমাদের সংযোগকৃত টিভি স্বচ্ছ এবং পরিষ্কার কোন ঝিরঝির নেই আগ্রহীরা আবেদন করতে পারেন
+                    </h1>
+                  </div>
+
+                  <div>
+                    <button className="bg-[green] w-[40vw] 800px:w-[15vw] text-white p-2 rounded-sm hover:scale-125  hover:transition hover: duration-300 text-[20px]">
+                      আবেদন করুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+
+          
+            <SwiperSlide>
+              <div
+                style={{
+                  backgroundImage: 'url("/images/slide/slide (5).jpg")',
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+                className="h-[80vh] w-full "
+              >
+                <div className=" h-full 800px:w-[70%] flex flex-col  800px:justify-between 800px:flex-row px-8 gap-x-5 items-center">
+                  <div className="mt-[20vh] 800px:mt-0 mb-5 800px:mb-0">
+                    <h1 className="text-[25px] font-semibold bg-black text-white p-2 rounded-md">
+                    আমাদের কাছ থেকে ওয়াইফাই নিলে আপনারা যে যে সুবিধাগুলো পাবেন উন্নত স্পিড এবং উন্নত অপটিক্যাল ফাইবারের মাধ্যমে আমরা সিগনাল প্রেরণ করে থাকি যার কারণে নেটে প্রচুর স্পিড থাকে
+                    </h1>
+                  </div>
+
+                  <div>
+                    <button className="bg-[green] w-[40vw] 800px:w-[15vw] text-white p-2 rounded-sm hover:scale-125  hover:transition hover: duration-300 text-[20px]">
+                      আবেদন করুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div
+                style={{
+                  backgroundImage: 'url("/images/slide/slide (6).jpg")',
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                }}
+                className="h-[80vh] w-full "
+              >
+                <div className=" h-full 800px:w-[70%] flex flex-col  800px:justify-between 800px:flex-row px-8 gap-x-5 items-center">
+                  <div className="mt-[20vh] 800px:mt-0 mb-5 800px:mb-0">
+                    <h1 className="text-[25px] font-semibold bg-black text-white p-2 rounded-md">
+                    প্রিয় গ্রাহক আমরা ২০২৪ সাল উপলক্ষে বিশেষ ডিসকাউন্ট মাধ্যমে নতুন ইউজার গ্রহণ করতেছি আপনারা আগ্রহ থাকলে আবেদন করুন
+                    </h1>
+                  </div>
+
+                  <div>
+                    <button className="bg-[green] w-[40vw] 800px:w-[15vw] text-white p-2 rounded-sm hover:scale-125  hover:transition hover: duration-300 text-[20px]">
+                      আবেদন করুন
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+   
           </Swiper>
         </div>
 

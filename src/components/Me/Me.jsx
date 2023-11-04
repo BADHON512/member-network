@@ -85,11 +85,11 @@ function MainContent({ Border,setBorder,LogOut }) {
       {Border === 4 && <AllWifi />}
 
       {Border === 7 && <div className="h-[80vh] w-full flex justify-center items-center">
-        <div className="w-full h-[20vh] 800px:h-[30vh] 800px:w-[30vw] bg-black rounded-md p-2 800px:p-5">
+        <div className="w-full min-h-[15vh] 800px:h-[30vh] 800px:w-[30vw] bg-black rounded-md p-3 800px:p-5">
           <h1 className="font-semibold text-[20px] text-white text-center">Are you sure you want to logout ?</h1>
           <div className="h-[80%] w-full flex justify-center items-end">
 
-            <div className="w-full flex justify-between text-white">
+            <div className="w-full flex justify-between text-white gap-x-3">
               <button onClick={()=>setBorder(45)} className="p-2 bg-[green] rounded-sm w-[100px]">Cancel</button>
               <button onClick={()=>LogOut()} className="p-2 bg-[red] rounded-sm w-[50px] font-semibold ">Yes</button>
             </div>
@@ -107,7 +107,7 @@ function Dashboard() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const LogOut = async () => {
-    const { data } = await axios.get("http://localhost:5000/api/v2/log-out", {
+    const { data } = await axios.get("https://member-network-server.vercel.app/api/v2/log-out", {
       withCredentials: true,
     });
     toast.success(data.message);

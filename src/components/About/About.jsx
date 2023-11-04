@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function About() {
   return (
     <div className="p-4">
@@ -8,7 +6,7 @@ export default function About() {
       <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0">
         <div className="w-full md:w-1/2 md:mr-4">
           <img
-            src="/public/abba.jpg"
+            src="/abba.jpg"
             alt="Founder"
             className="w-full rounded-lg shadow-lg"
           />

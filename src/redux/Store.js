@@ -8,4 +8,4 @@ export const Store = configureStore({
   },
 })
 
-export const FURL="http://localhost:5000/api/v2"
+export const FURL="https://member-network-server.vercel.app/api/v2"
